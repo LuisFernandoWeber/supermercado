@@ -10,12 +10,12 @@ class ProdutosController extends Controller
     function listar(){
         $produtos = Produto::all();
 
-        return view('produtos_listar', 
+        return view('Produtos/produtos_listar', 
             ['produtos' => $produtos]);
     }
 
     function novo(){
-        return view('produtos_novo');
+        return view('Produtos/produtos_novo');
     }
 
     function salvar(Request $req, $id=null){
@@ -35,6 +35,6 @@ class ProdutosController extends Controller
     function edit($id){
         $p = Produto::findOrFail($id);
 
-        return view('produtos_edit', ['p' => $p]);
+        return view('Produtos/produtos_edit', ['p' => $p]);
     }
 }
