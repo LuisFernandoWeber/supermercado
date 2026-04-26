@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\FornecedoresController;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,3 +30,4 @@ Route::get('/fornecedores', [FornecedoresController::class, 'listar']);
 Route::get('/fornecedores/novo', [FornecedoresController::class, 'novo'])->name('forn.novo');
 Route::post('/fornecedores/novo/{id?}', [FornecedoresController::class, 'salvar'])->name('forn.salvar');
 Route::get('/fornecedores/edit/{id}', [FornecedoresController::class, 'edit'])->name('forn.edit');
+
