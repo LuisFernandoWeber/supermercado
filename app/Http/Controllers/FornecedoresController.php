@@ -37,4 +37,12 @@ class FornecedoresController extends Controller
 
         return view('Fornecedores/fornecedores_edit', ['f' => $f]);
     }
+
+    function delete($id){
+        $f = Fornecedor::findOrFail($id);
+        $f->delete();
+
+        return redirect('/fornecedores');
+        
+    }
 }

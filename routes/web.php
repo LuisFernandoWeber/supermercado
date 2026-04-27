@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\FornecedoresController;
+use App\Http\Controllers\CidadesController;
 
 
 Route::get('/', function () {
@@ -30,4 +31,10 @@ Route::get('/fornecedores', [FornecedoresController::class, 'listar']);
 Route::get('/fornecedores/novo', [FornecedoresController::class, 'novo'])->name('forn.novo');
 Route::post('/fornecedores/novo/{id?}', [FornecedoresController::class, 'salvar'])->name('forn.salvar');
 Route::get('/fornecedores/edit/{id}', [FornecedoresController::class, 'edit'])->name('forn.edit');
+Route::get('/fornecedores/delete/{id}', [FornecedoresController::class, 'delete'])->name('forn.delete');
 
+Route::get('/cidades', [CidadesController::class, 'listar']);
+Route::get('/cidades/novo', [CidadesController::class, 'novo'])->name('cidade.novo');
+Route::post('/cidades/novo/{id?}', [CidadesController::class, 'salvar'])->name('cidade.salvar');
+Route::get('/cidades/edit/{id}', [CidadesController::class, 'edit'])->name('cidade.edit');
+Route::get('/cidade/delete/{id}', [CidadesController::class, 'delete'])->name('cidade.delete');

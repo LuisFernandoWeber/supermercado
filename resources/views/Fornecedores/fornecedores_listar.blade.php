@@ -24,6 +24,7 @@
                 <td>{{ $f -> cnpj}}</td>
                 <td>
                     <a href="{{ route('forn.edit', ['id' => $f->id]) }}" class="btn btn-warning">Alterar</a>
+                    <a href="{{ route('forn.delete', $f->id) }}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
             @endforeach
